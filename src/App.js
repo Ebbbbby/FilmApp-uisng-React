@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Sidebar from './components/sidebar/Sidebar';
+import MainPage from './components/mainPage/MainPage';
+import Box from "@mui/material/Box";
+// import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box className="page__wrapper">
+      <Stack direction="row" spacing={1}>
+        <Sidebar />
+        <MainPage />
+      </Stack>
+    </Box>
   );
 }
 
