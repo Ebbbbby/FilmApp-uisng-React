@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Image1 from '../images/3.jpg'
 import '../movieApi/movieApi.css'
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import { Typography } from "@material-ui/core"
 
 const MovieAPI = () => {
   const [movies, setMovies] = useState([
@@ -25,17 +28,24 @@ const MovieAPI = () => {
     setMovies(responseJson.Search);
   };
 
-  return movies.map((movie) => {
+
     return (
-      <div className="movie__container">
-        <div className="single__movie">
-          <div className="movie">
-            <img src={Image1} alt="" />
-          </div>
-        </div>
-      </div>
+      <ImageList sx={{ width:1050}} cols={4}>
+        {movies.map((movie) => (
+          <ImageListItem key={movie.Poster}>
+            <img
+              src={movie.Poster}
+              alt={movie.Title}
+              loading="lazy"
+            />
+            <Typography variant ="h6">{movie.Type}</Typography>
+          </ImageListItem>
+
+        ))}
+
+      </ImageList>
     );
-  });
+   ;
 };
 
 export default MovieAPI;
