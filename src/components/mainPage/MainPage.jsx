@@ -1,12 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Navbar from '../navbar/Navbar'
+import MovieAPI from '../movieApi/MovieAPI';
+
+//5c1bdcf8
 
 const Mainpage = () => {
+
+
   return (
-    <div>
-      <Navbar/>
-    </div>
-  )
+    <section>
+      <Navbar />
+      <MovieAPI/>
+    </section>
+  );
 }
 
 export default Mainpage

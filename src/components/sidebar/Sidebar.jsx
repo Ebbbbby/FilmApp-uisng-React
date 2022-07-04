@@ -15,7 +15,7 @@ export default function BasicList() {
     <Box
       sx={{
         width: "100%",
-        maxWidth: 360,
+        maxWidth: 300,
         bgcolor: "#FF5F1F",
         position: "sticky",
       }}
